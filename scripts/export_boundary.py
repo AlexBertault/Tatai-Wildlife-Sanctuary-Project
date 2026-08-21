@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export study boundary → data/processed/tatai_boundary.geojson"""
+"""Export study boundary to data/processed/tatai_boundary.geojson"""
 
 from __future__ import annotations
 

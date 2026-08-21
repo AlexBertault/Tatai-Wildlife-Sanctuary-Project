@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compute NDVI summary stats from GeoTIFFs → data/processed/ndvi_stats.json"""
+"""Compute NDVI summary stats from GeoTIFFs to data/processed/ndvi_stats.json"""
 
 from __future__ import annotations
 

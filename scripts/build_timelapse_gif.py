@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build NDVI timelapse GIF for README → assets/ndvi-timelapse.gif"""
+"""Build NDVI timelapse GIF for README to assets/ndvi-timelapse.gif"""
 
 from pathlib import Path
 
