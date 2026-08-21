@@ -1,0 +1,42 @@
+{
+  "series": [
+    {
+      "year": 2013,
+      "mean": 0.4029,
+      "std": 0.0732,
+      "min": -0.1944,
+      "max": 0.591,
+      "pct_healthy_gt_0_5": 1.9,
+      "pixel_count": 1607381
+    },
+    {
+      "year": 2020,
+      "mean": 0.3982,
+      "std": 0.0779,
+      "min": -0.3085,
+      "max": 0.6077,
+      "pct_healthy_gt_0_5": 2.0,
+      "pixel_count": 1607380
+    },
+    {
+      "year": 2025,
+      "mean": 0.3972,
+      "std": 0.083,
+      "min": -0.1817,
+      "max": 0.6031,
+      "pct_healthy_gt_0_5": 2.9,
+      "pixel_count": 1607381
+    }
+  ],
+  "summary": {
+    "delta_2013_2025": -0.0057,
+    "sanctuary_established": "2016-05-09",
+    "area_ha": 144539,
+    "scene_dates": [
+      "2013-12",
+      "2020-12",
+      "2025-12"
+    ],
+    "landsat": "8/9 Collection 2 Level-1"
+  }
+}

@@ -1,0 +1,19 @@
+# Raw geospatial data (~5.5 GB) — local only
+data/raw/
+
+# Python
+.venv/
+__pycache__/
+*.enp
+
+# Temp / originals
+_slides/
+site/
+maps/
+docs/slides/
+*.zip
+*.tar
+*.TIF
+
+# OS
+.DS_Store

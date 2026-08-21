@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "tatai_boundary",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Tatai Wildlife Sanctuary (study extent)" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 104.26079921010016, 10.512614114205805 ], [ 104.255238832240607, 12.623495536190182 ], [ 102.151245834338624, 12.609335405423828 ], [ 102.172482320794501, 10.500878914719037 ], [ 104.26079921010016, 10.512614114205805 ] ] ] } }
+]
+}

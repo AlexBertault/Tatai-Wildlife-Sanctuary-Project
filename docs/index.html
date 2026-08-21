@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tatai Wildlife Sanctuary · Remote Sensing Analysis</title>
+  <meta name="description" content="Landsat NDVI time-series and change detection for Tatai Wildlife Sanctuary, Cambodia." />
+  <meta name="author" content="Alex Bertault" />
+  <link rel="stylesheet" href="story.css" />
+</head>
+<body>
+  <nav>
+    <span class="brand">Alex Bertault</span>
+    <div class="links">
+      <a href="#overview">Overview</a>
+      <a href="#context">Context</a>
+      <a href="#methods">Methods</a>
+      <a href="#ndvi">NDVI</a>
+      <a href="#fires">Fires</a>
+      <a href="#findings">Findings</a>
+      <a href="swipe.html">Swipe Map</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Remote Sensing · Conservation GIS</div>
+    <h1>Tatai Wildlife Sanctuary</h1>
+    <p class="sub">Vegetation monitoring &amp; landscape change · Cambodia · 2013–2025</p>
+    <p class="team">
+      A multi-temporal NDVI assessment of protected-area designation effects using Landsat 8/9,
+      fire alerts, and infrastructure stressors in the Cardamom Mountains.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="#ndvi">View Analysis</a>
+      <a class="btn" href="swipe.html">Interactive Map</a>
+    </div>
+  </header>
+
+  <section class="section" id="overview">
+    <div class="section-label">Overview</div>
+    <h2>Research Question</h2>
+    <p class="lead">
+      How has the establishment of the Tatai Wildlife Sanctuary influenced vegetation health and
+      landscape change since its implementation in 2016?
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="k">Location</div><div class="v">Koh Kong, Cambodia</div></div>
+      <div class="stat"><div class="k">Area</div><div class="v">144,539 ha</div></div>
+      <div class="stat"><div class="k">Species</div><div class="v">650+</div></div>
+      <div class="stat"><div class="k">Time span</div><div class="v">2013 – 2025</div></div>
+    </div>
+    <h3 class="subhead accent" style="margin-top:2rem;">Analytical focus</h3>
+    <ul>
+      <li>NDVI changes before and after sanctuary designation</li>
+      <li>Wildfires and major disturbances affecting vegetation or ecosystem health</li>
+      <li>Human traffic, road expansion, and development within the sanctuary</li>
+    </ul>
+  </section>
+
+  <section class="section" id="context">
+    <div class="section-label">Context</div>
+    <h2>Conservation Background</h2>
+    <p>
+      Cambodia has expanded protected areas significantly since the 1990s as part of broader
+      biodiversity conservation efforts. Despite legal protection, many conservation areas continue
+      to face pressure from logging, land concessions, infrastructure projects, and fires — a
+      tension between formal protection and ongoing development that frames any analysis of
+      Tatai Wildlife Sanctuary.
+    </p>
+    <p>
+      The sanctuary lies in the Cardamom Rainforest, a biodiverse wilderness and an area of
+      interest for Cambodia's goal to reintroduce tigers. It was designated a protected area in
+      May 2016 (144,247 ha) and amended to 144,539 ha in July 2023. The site has faced poaching,
+      logging, fires, and land grabbing; satellite records also document deforestation across
+      Cambodia's protected areas as recently as 2022.
+    </p>
+    <p>
+      Management initiatives include ecotourism planning with a sustainability focus. Portions of
+      the landscape participate in the <strong>Southern Cardamom REDD+ Project</strong>, aimed at
+      reducing emissions, halting deforestation, and combating forest degradation.
+    </p>
+
+    <h3 class="subhead accent" style="margin-top:2rem;">Protection zones</h3>
+    <p>Cambodia applies four zone types within Tatai:</p>
+    <ul>
+      <li><strong>Core Zone</strong> — 42,872 ha (~30%) · access heavily restricted</li>
+      <li><strong>Conservation Zone</strong> — 54,045 ha (~37%) · no exploitation; limited public access</li>
+      <li><strong>Sustainable Use Zone</strong> — 18,558 ha (~13%) · regulated development and resource use</li>
+      <li><strong>Community Zone</strong> — 29,064 ha (~20%) · local resource use under a management plan</li>
+    </ul>
+
+    <div class="timeline">
+      <div class="timeline-item"><span class="year">2014</span><br /><span class="event">Stung Tatai Hydropower Dam completed</span></div>
+      <div class="timeline-item"><span class="year">May 2016</span><br /><span class="event">TWS established via Sub-Decree No. 80</span></div>
+      <div class="timeline-item"><span class="year">2021</span><br /><span class="event">PADDD event — 64,500 acres removed from sanctuary boundaries</span></div>
+      <div class="timeline-item"><span class="year">July 2023</span><br /><span class="event">Sanctuary size amended to 144,539 ha</span></div>
+      <div class="timeline-item"><span class="year">2025</span><br /><span class="event">Management plan implemented through 2034</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="methods">
+    <div class="section-label">Methods</div>
+    <h2>Data &amp; Processing</h2>
+    <ul>
+      <li><strong>Study area:</strong> Tatai Wildlife Sanctuary, Koh Kong Province, southwestern Cambodia (Cardamom Mountains).</li>
+      <li><strong>Satellite data:</strong> Landsat 8/9 Collection 2 Level-1 imagery — December 2013, 2020, and 2025.</li>
+      <li><strong>Seasonal control:</strong> Dry-season scenes selected to minimize cloud cover and seasonal vegetation variation.</li>
+      <li><strong>NDVI:</strong> Calculated from Landsat multispectral bands to measure vegetation greenness.</li>
+      <li><strong>Change detection:</strong> NDVI difference analysis (2013–2025) via ArcGIS Pro Raster Calculator.</li>
+      <li><strong>Fire data:</strong> NASA FIRMS alerts (Aqua/Terra MODIS, 2015–2025) with Global Forest Watch forest-loss context.</li>
+      <li><strong>Roads:</strong> OpenStreetMap shapefiles via Geofabrik — 2020 vs 2025 network comparison.</li>
+    </ul>
+    <p class="tags">
+      <span class="tag">Landsat 8/9</span>
+      <span class="tag">NDVI</span>
+      <span class="tag">ArcGIS Pro</span>
+      <span class="tag">NASA FIRMS</span>
+      <span class="tag">Global Forest Watch</span>
+      <span class="tag">OpenStreetMap</span>
+      <span class="tag">WDPA</span>
+    </p>
+  </section>
+
+  <section class="section" id="ndvi">
+    <div class="section-label">Results · NDVI</div>
+    <h2>Vegetation Greenness Over Time</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">2013 mean NDVI</div><div class="v">0.403</div></div>
+      <div class="stat"><div class="k">2025 mean NDVI</div><div class="v">0.397</div></div>
+      <div class="stat"><div class="k">Δ NDVI</div><div class="v">−0.006</div></div>
+      <div class="stat"><div class="k">Trend</div><div class="v">Stable</div></div>
+    </div>
+    <p>
+      Mean NDVI decreased slightly from 0.403 (2013) to 0.397 (2025). The small magnitude suggests
+      overall vegetation greenness remained stable after the 2016 conservation designation. Spatial
+      difference analysis shows most areas experienced minimal change or slight increases; the
+      largest negative changes occur in water bodies, which naturally register low NDVI. Reports of
+      illegal logging and wildlife activity may explain concentrated negative changes away from water.
+    </p>
+    <p class="callout">Overall vegetation conditions appear largely stable across the study area.</p>
+
+    <div class="swipe-embed">
+      <h3>Interactive comparison</h3>
+      <p>
+        <a href="swipe.html" style="color:var(--accent);">Open the NDVI swipe map →</a>
+        · static HTML, no backend · works via GitHub Pages on <code>/docs</code>
+      </p>
+    </div>
+
+    <div class="figure-grid three">
+      <figure class="figure">
+        <img src="assets/ndvi-2013.jpg" alt="NDVI map 2013" loading="lazy" />
+        <figcaption>2013 · pre-designation baseline</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/ndvi-2020.jpg" alt="NDVI map 2020" loading="lazy" />
+        <figcaption>2020 · four years post-designation</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/ndvi-2025.jpg" alt="NDVI map 2025" loading="lazy" />
+        <figcaption>2025 · most recent observation</figcaption>
+      </figure>
+    </div>
+
+    <figure class="figure chart">
+      <img src="assets/mean-ndvi-chart.png" alt="Mean NDVI vs year line chart" loading="lazy" />
+      <figcaption>Mean NDVI trend · sanctuary-wide zonal average</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="change">
+    <div class="section-label">Change Detection</div>
+    <h2>Spatial NDVI Difference · 2013–2025</h2>
+    <figure class="figure hero-map">
+      <img src="assets/ndvi-change-map.png" alt="NDVI change map 2013 to 2025" loading="lazy" />
+      <figcaption>Red = vegetation loss · Green = vegetation gain · sanctuary boundary</figcaption>
+    </figure>
+    <p>
+      The strongest vegetation loss aligns with the Stung Tatai hydropower reservoir and localized
+      fire-affected areas on the 2013–2025 change map. Most of the sanctuary retained stable
+      conditions or slight growth, indicating large-scale ecological resilience despite
+      site-specific disturbances.
+    </p>
+  </section>
+
+  <section class="section" id="fires">
+    <div class="section-label">Fire Analysis</div>
+    <h2>Wildfires &amp; FIRMS</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">FIRMS alerts</div><div class="v">285</div></div>
+      <div class="stat"><div class="k">Forest loss 2016–24</div><div class="v">150 ha</div></div>
+      <div class="stat"><div class="k">Forest loss 2005–15</div><div class="v">41 ha</div></div>
+      <div class="stat"><div class="k">Total tree cover loss</div><div class="v">3.2 kha</div></div>
+    </div>
+    <p>
+      NASA FIRMS data (2015–2025) yielded 285 fire alerts from Aqua and Terra MODIS — not all
+      confirmed as active fires. Global Forest Watch analysis shows 150 ha of forest loss from
+      fire between 2016 and 2024, compared with 41 ha between 2005 and 2015. Total tree cover loss
+      across both periods was 3.2 kha; fires accounted for a fraction of total loss but appear to
+      have had the strongest effect on vegetation health.
+    </p>
+    <p>
+      Although not every alert represents confirmed fire damage, several alert clusters align with
+      areas of lower vegetation vigor on the NDVI map. After 2015, alert counts dropped — potentially
+      reflecting protected-area status — yet recent fires may have had greater per-event impact. One
+      hypothesis: increasingly extreme wet/dry seasons under climate change may make forests more
+      fire-prone even as alert frequency declines.
+    </p>
+    <figure class="figure">
+      <img src="assets/forest-coverage.png" alt="Global Forest Watch tree cover change" loading="lazy" />
+      <figcaption>Global Forest Watch · tree cover gain and loss</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="stressors">
+    <div class="section-label">Stressors</div>
+    <h2>Hydropower, Roads &amp; Human Activity</h2>
+
+    <h3 class="subhead accent">Stung Tatai Hydropower Project</h3>
+    <ul>
+      <li>Small NDVI decline (2013–2025) likely linked to dam construction in the northern conservation area (completed 2014, funded by China National Heavy Machinery Corp).</li>
+      <li>High-NDVI forest converted to open water (low NDVI), pulling down sanctuary-wide averages.</li>
+      <li>NDVI increases downstream may reflect reduced water flow exposing previously submerged land.</li>
+      <li>Outside the dam footprint, NDVI remained stable or increased — decline reflects reduced vegetation <em>extent</em>, not widespread health loss.</li>
+    </ul>
+
+    <h3 class="subhead accent" style="margin-top:1.5rem;">Road &amp; access pressure</h3>
+    <ul>
+      <li>No reliable human-activity baseline exists for 2013, limiting attribution of early road effects.</li>
+      <li>OSM road layers (Geofabrik, 2020 vs 2025) show network expansion across and around the sanctuary.</li>
+      <li>Areas with new roads overlap zones of negative NDVI change on the difference map.</li>
+      <li>Ecotourism suitability mapping identifies hotspots in the south, central, and northwest — as development expands, human traffic will likely increase.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="findings">
+    <div class="section-label">Findings</div>
+    <h2>Conclusion</h2>
+    <ul>
+      <li>NDVI decreased slightly from 2013 to 2025, but the overall change was very small — vegetation health remained largely stable across most of the sanctuary.</li>
+      <li>Most of the area showed stable conditions or slight vegetation growth, indicating resilient large-scale ecological conditions.</li>
+      <li>The strongest loss occurred near the Stung Tatai hydropower reservoir and in localized fire-affected areas, matching the 2013–2025 change map.</li>
+      <li>Observed changes were localized rather than widespread — major impacts tied to specific disturbances, not broad ecosystem decline.</li>
+    </ul>
+
+    <div class="split" style="margin-top:2rem;">
+      <div>
+        <h3 class="subhead accent">What worked</h3>
+        <ul>
+          <li>NDVI and change detection clearly identified where landscape change concentrated over time.</li>
+          <li>Cross-referencing fire alerts, road expansion, and hydropower helped explain localized declines.</li>
+          <li>Multiple ancillary datasets placed NDVI patterns in broader environmental context.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="subhead warn">Limitations</h3>
+        <ul>
+          <li>Small NDVI differences and limited human-activity data made separating causes difficult.</li>
+          <li>Water bodies strongly lower NDVI, amplifying negative values near reservoir expansion.</li>
+        </ul>
+        <h3 class="subhead accent" style="margin-top:1rem;">Future work</h3>
+        <ul>
+          <li>Deeper analysis of hydropower expansion, fire history, and land-use activity to isolate drivers of localized change.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="references">
+    <div class="section-label">References</div>
+    <h2>Sources</h2>
+    <ul class="refs">
+      <li>
+        Baromey, N. &amp; Chansopheaktra, S. <em>Mapping and Prioritizing Sites for Ecotourism Development: Sustainable Landscape and Ecotourism Project in the Cardamom Mountains and Tonle Sap Landscape.</em>
+        <a href="https://www.profor.info/sites/default/files/publication/Prioritizing%20Ecotourism%20Sites%2C%20Development%20%26%20Management%20Models%20and%20Priority%20Investments_Review.pdf" target="_blank" rel="noopener">profor.info</a>
+      </li>
+      <li>
+        Califf, A. (2023). Satellite data shows protected areas faced brunt of deforestation in 2022.
+        <a href="https://cambojanews.com/satellite-data-shows-protected-areas-faced-brunt-of-deforestation-in-2022/" target="_blank" rel="noopener">Camboja News</a>
+      </li>
+      <li>
+        <em>Management Plan Tatai Wildlife Sanctuary 2025–2034.</em> Open Development Mekong Datahub.
+        <a href="https://data.laos.opendevelopmentmekong.net/library_record/management-plan-tatai-wildlife-sanctuary-2025-2034" target="_blank" rel="noopener">opendevelopmentmekong.net</a>
+      </li>
+      <li>
+        Pauly, M., Crosse, W., &amp; Tosteson, J. (2022). High deforestation trajectories in Cambodia slowly transformed through economic land concession restrictions and strategic execution of REDD+ protected areas. <em>Scientific Reports</em>, 12, 17102.
+        <a href="https://doi.org/10.1038/s41598-022-19660-0" target="_blank" rel="noopener">doi.org</a>
+      </li>
+      <li>
+        Patil, A. (2023). India and Cambodia sign pact for tiger translocation as Project Tiger completes 50 years.
+        <a href="https://www.indiatimes.com/explainers/news/india-and-cambodia-sign-pact-for-tiger-translocation-as-project-tiger-completes-50-years/articleshow/127035070.html" target="_blank" rel="noopener">Indiatimes</a>
+      </li>
+      <li>
+        UNEP-WCMC and IUCN (2026). Protected Planet: WDPA and WD-OECM.
+        <a href="https://www.protectedplanet.net" target="_blank" rel="noopener">protectedplanet.net</a>
+      </li>
+      <li>
+        Cambodia (2008). Protected Area Law.
+        <a href="https://faolex.fao.org/docs/pdf/cam81966.pdf" target="_blank" rel="noopener">FAOLEX</a>
+      </li>
+      <li>NASA FIRMS · USGS Landsat · Global Forest Watch · Geofabrik OpenStreetMap extracts</li>
+    </ul>
+  </section>
+
+  <footer>
+    Alex Bertault · Remote Sensing &amp; Geospatial Analysis<br />
+    <a href="swipe.html">Interactive NDVI map</a>
+  </footer>
+</body>
+</html>
