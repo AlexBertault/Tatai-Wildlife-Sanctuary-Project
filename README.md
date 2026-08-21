@@ -58,8 +58,6 @@ Red = loss · green = gain. Decline concentrates at the dam footprint and fire c
 
 Global Forest Watch: fire-driven forest loss rose after designation (150 ha in 2016–24 vs 41 ha in 2005–15), while total tree-cover loss across both periods was about 3.2 kha.
 
-[Compare years on the interactive swipe map →](docs/swipe.html)
-
 ---
 
 ## Approach
